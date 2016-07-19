@@ -39,7 +39,7 @@ angular
             }
 
             $scope.report = Weather.getWeather(paramObj);
-            $scope.weatherReport.push($scope.report);     
+            $scope.weatherReport.push($scope.report);
         }
 
     });
