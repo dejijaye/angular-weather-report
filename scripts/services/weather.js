@@ -10,7 +10,7 @@ angular
 
         return {
             getWeather: function(weatherParams) {
-                return $http.get(API_PATH, {params: weatherParams});             
+                return $http.get(API_PATH, {params: weatherParams});   
             }
         }
     });
