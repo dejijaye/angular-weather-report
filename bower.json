@@ -1,0 +1,25 @@
+{
+  "name": "y",
+  "homepage": "https://github.com/dejijaye/angular-weather-report",
+  "authors": [
+    "dejijaye <dejijaye@gmail.com>"
+  ],
+  "description": "Weather report",
+  "main": "app.js",
+  "keywords": [
+    "weather",
+    "report"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ng-tags-input": "^3.1.1"
+  }
+}

@@ -1,0 +1,83 @@
+body {
+  background: #EBEFF1;
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+}
+
+#header {
+  background: #646E7B;
+  margin-left: 0 !important;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+p {
+  margin: 0 0 1px;
+  font-size: 10px;
+  color: #9BA2AA;
+  font-weight: 300;
+}
+
+.panel {
+  border: none;
+  border-radius: 2px;
+}
+
+.panel-body {
+  padding: 5px;
+}
+
+.location {
+  margin-top: 10px;
+
+}
+
+.city {
+  font-weight: 100;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.temp {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: -2px;
+  margin-top: 10px;
+  color: #565656;
+}
+
+.unit {
+  position: absolute;
+  top: 13px;
+  right: 16px;
+}
+
+.conditions {
+  margin-top: 20px;
+}
+
+tags-input {
+  margin: 10px 15%;
+  height: 40px;
+}
+
+tags-input .tags, tags-input .tags .input {
+  background: #838B95;
+  border: none;
+  box-shadow: none;
+  border-radius: 2px;
+}
+
+tags-input .tags .tag-item {
+  background: #9BA2AA;
+  border-radius: 2px;
+  border: none;
+}
+
+tags-input .tags .tag-item, tags-input .tags .tag-item .remove-button, tags-input .tags .input {
+  color: #EAEAEA; 
+  font-weight: 300;
+  height: 34px;
+  font-size: 12px;
+  line-height: 2.6em;
+}
