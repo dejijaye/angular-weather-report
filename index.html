@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Weather App</title>
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="bower_components/ng-tags-input/ng-tags-input.css">
+    </head>
+    <body ng-app="weatherApp">
+        <div class="container" ng-controller="cityCtrl" ng-init="defaultView()">
+            <tags-input ng-model="cities" on-tag-added="getTag($tag)" on-tag-removing="removeTag($tag)"></tags-input>
+            <div>
+                {{weatherReport | json}}
+                <div ng-repeat="weather in weatherReport" class="panel panel-default weather-panel" >
+                    <div class="panel-body">
+                        <div class="col-sm-6">
+
+                            <h1>{{weather.name}}</h1>
+                            <h1 class="temp">{{weather.main.temp - 273.15 | number:1}}<sup>&deg;C</sup></h1>
+
+                        </div>
+
+                        <div class="col-sm-6 conditions">   
+
+                            <h4>{{weather.weather[0].description}}</h4>
+                            <h4>Humidity: {{weather.main.humidity}}%</h4>
+                            <h4>Wind: {{weather.wind.speed}} km/h</h4>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </body>
+
+    <!-- Library Scripts -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/ng-tags-input/ng-tags-input.js"></script>
+
+    <!-- Application Scripts -->
+    <script src="scripts/app.js"></script> 
+    <script src="scripts/services/weather.js"></script>    
+    <script src="scripts/controllers/city-controller.js"></script>
+</html> 
