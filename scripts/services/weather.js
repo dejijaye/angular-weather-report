@@ -4,7 +4,7 @@ angular
     .module('weatherApp')
     .factory('Weather', function($resource) {
 
-        var API_PATH = 'http://api.openweathermap.org/data/2.5/weather';
+        var API_PATH = 'https://api.openweathermap.org/data/2.5/weather';
 
         var Weather = $resource(API_PATH);
 
