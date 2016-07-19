@@ -5,12 +5,13 @@ angular
     .controller('cityCtrl', function($scope, Weather) {
 
         $scope.cities = [
-            { text: 'France' },
-            { text: 'Germany' },
-            { text: 'Lagos' },
-            { text: 'London' }
+            { text: 'Lisbon' },
+            { text: 'Paris' },
+            { text: 'Los Angeles' }
         ];
         $scope.weatherReport = [];
+
+        $scope.date = Date.now();
 
         $scope.defaultView = function() {
             $scope.cities.forEach(function(city) {

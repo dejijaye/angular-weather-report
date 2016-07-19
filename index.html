@@ -3,29 +3,40 @@
     <head>
         <title>Weather App</title>
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+        <!-- <link rel="stylesheet" type="text/css" href="bower_components/ng-tags-input/ng-tags-input.bootstrap.css"> -->
+        <link rel="stylesheet" type="text/css" href="bower_components/ng-tags-input/ng-tags-input.min.css">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="bower_components/ng-tags-input/ng-tags-input.css">
     </head>
     <body ng-app="weatherApp">
-        <div class="container" ng-controller="cityCtrl" ng-init="defaultView()">
-            <tags-input ng-model="cities" on-tag-added="getTag($tag)" on-tag-removing="removeTag($tag)"></tags-input>
-            <div>
-                {{weatherReport | json}}
-                <div ng-repeat="weather in weatherReport" class="panel panel-default weather-panel" >
-                    <div class="panel-body">
-                        <div class="col-sm-6">
+        <div class="" ng-controller="cityCtrl" ng-init="defaultView()">
+            <div class="container" id="header">
+                <tags-input ng-model="cities" on-tag-added="getTag($tag)" on-tag-removing="removeTag($tag)" placeholder="Enter a city"></tags-input>
+            </div>
+            <div class="container">
+                <!-- {{weatherReport | json}} -->
+                <div ng-repeat="weather in weatherReport" class="col-md-4">
+                    <div class="panel panel-default weather-panel" ng-if="weatherReport.length">
+                        <div class="panel-body">
 
-                            <h1>{{weather.name}}</h1>
-                            <h1 class="temp">{{weather.main.temp - 273.15 | number:1}}<sup>&deg;C</sup></h1>
+                            <div class="col-md-4 location">
+                                <h4 class="city">{{weather.name}}</h4>
+                                <p>{{date | date:'MMM d'}}</p>
+                            </div>
 
-                        </div>
+                            <div class="col-md-4 text-center" ng-show="weather.main.temp">
+                                <h2 class="temp">{{weather.main.temp - 273.15 | number:1}}</h2><span class="unit"><sup>&deg;C</sup></span>
+                                <p>{{weather.weather[0].description | capitalize}}</p>
+                            </div>
 
-                        <div class="col-sm-6 conditions">   
+                            <div class="col-md-4 conditions">   
+                                <div class="pull-right">
+                                    <p>Humidity: {{weather.main.humidity}}%</p>
+                                    <p>Wind: {{weather.wind.speed}} km/h</p>
+                                </div>
 
-                            <h4>{{weather.weather[0].description}}</h4>
-                            <h4>Humidity: {{weather.main.humidity}}%</h4>
-                            <h4>Wind: {{weather.wind.speed}} km/h</h4>
-
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -43,4 +54,5 @@
     <script src="scripts/app.js"></script> 
     <script src="scripts/services/weather.js"></script>    
     <script src="scripts/controllers/city-controller.js"></script>
+    <script src="scripts/filters/capitalize.js"></script>
 </html> 
