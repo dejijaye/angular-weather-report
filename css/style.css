@@ -81,3 +81,8 @@ tags-input .tags .tag-item, tags-input .tags .tag-item .remove-button, tags-inpu
   font-size: 12px;
   line-height: 2.6em;
 }
+
+/**/
+[ng\:cloak],[ng-cloak],.ng-cloak {
+  display:none !important
+}

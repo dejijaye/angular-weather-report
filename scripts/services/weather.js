@@ -2,19 +2,14 @@
 
 angular
     .module('weatherApp')
-    .factory('Weather', function($resource) {
+    .factory('Weather', function($http) {
 
-        var API_PATH = '//api.openweathermap.org/data/2.5/weather';
+        var API_PATH = '//openapiwrapper.herokuapp.com/api/getWeather';
 
-        var Weather = $resource(API_PATH);
 
         return {
             getWeather: function(weatherParams) {
-                return Weather.get(weatherParams, function(successResult) {
-                    return successResult;
-                }, function(errorResult) {
-                    console.log(errorResult);
-                });             
+                return $http.get(API_PATH, {params: weatherParams});             
             }
         }
     });

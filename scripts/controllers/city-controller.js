@@ -38,8 +38,10 @@ angular
                 APPID: "0c95eae133a4b8ad31979dea50dd7bee"
             }
 
-            $scope.report = Weather.getWeather(paramObj);
-            $scope.weatherReport.push($scope.report);
+            Weather.getWeather(paramObj).success(function(res) {
+                console.log(JSON.parse(res));
+                $scope.weatherReport.push(JSON.parse(res));
+            });
         }
 
     });
