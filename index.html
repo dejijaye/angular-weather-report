@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body ng-app="weatherApp" class="ng-cloak">
-        <div class="" ng-controller="cityCtrl" ng-init="defaultView()">
+        <div class="" ng-controller="cityCtrl">
             <div class="container" id="header">
                 <tags-input ng-model="cities" on-tag-added="getTag($tag)" on-tag-removing="removeTag($tag)" placeholder="Enter a city"></tags-input>
             </div>
