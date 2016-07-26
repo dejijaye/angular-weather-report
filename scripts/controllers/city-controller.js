@@ -25,7 +25,7 @@ angular
 
         $scope.removeTag = function(tag) {
             $scope.weatherReport.forEach(function(report) {
-                if(tag.text.toLowerCase() === report.name.toLowerCase()) {
+                if($scope.cities.indexOf(tag) === $scope.weatherReport.indexOf(report)) {
                     $scope.weatherReport.splice($scope.weatherReport.indexOf(report), 1);
                 }
             });
