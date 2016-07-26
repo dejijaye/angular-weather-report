@@ -39,8 +39,9 @@ angular
             }
 
             Weather.getWeather(paramObj).success(function(res) {
-                console.log(JSON.parse(res));
                 $scope.weatherReport.push(JSON.parse(res));
+            }).error(function(res) {
+                console.log('error loading report' + error);
             });
         }
 
