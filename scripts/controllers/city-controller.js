@@ -25,7 +25,7 @@ angular
 
         $scope.removeTag = function(tag) {
             $scope.weatherReport.forEach(function(report) {
-                if($scope.cities.indexOf(tag) === $scope.weatherReport.indexOf(report)) {
+                if(tag.text.toLowerCase() === report.name.toLowerCase()) {
                     $scope.weatherReport.splice($scope.weatherReport.indexOf(report), 1);
                 }
             });
@@ -39,10 +39,14 @@ angular
             }
 
             Weather.getWeather(paramObj).success(function(res) {
+                console.log(JSON.parse(res));
                 $scope.weatherReport.push(JSON.parse(res));
+                console.log($scope.weatherReport);
+
             }).error(function(res) {
                 console.log('error loading report' + error);
             });
         }
+
 
     });
