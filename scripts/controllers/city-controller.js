@@ -4,20 +4,10 @@ angular
     .module('weatherApp')
     .controller('cityCtrl', function($scope, Weather) {
 
-        $scope.cities = [
-            { text: 'Lisbon' },
-            { text: 'Paris' },
-            { text: 'Los Angeles' }
-        ];
+        $scope.cities = [];
         $scope.weatherReport = [];
 
         $scope.date = Date.now();
-
-        $scope.defaultView = function() {
-            $scope.cities.forEach(function(city) {
-                $scope.getWeatherReport(city);
-            });
-        }
 
         $scope.getTag = function(tag) {
             $scope.getWeatherReport(tag);
@@ -40,6 +30,8 @@ angular
 
             Weather.getWeather(paramObj).success(function(res) {
                 $scope.weatherReport.push(JSON.parse(res));
+
+
             }).error(function(res) {
                 console.log('error loading report' + error);
             });
