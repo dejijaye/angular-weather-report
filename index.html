@@ -19,17 +19,17 @@
                     <div class="panel panel-default weather-panel" ng-if="weatherReport.length > 0" >
                         <div class="panel-body">
 
-                            <div class="col-md-4 location">
+                            <div class="col-md-4 col-sm-4 location">
                                 <h4 class="city">{{weather.name | limitTo:12}}</h4>
                                 <p>{{date | date:'MMM d'}}</p>
                             </div>
 
-                            <div class="col-md-4 text-center" ng-show="weather.main.temp">
+                            <div class="col-md-4 col-sm-4 text-center" ng-show="weather.main.temp">
                                 <h2 class="temp">{{weather.main.temp - 273.15 | number:1}}</h2><span class="unit"><sup>&deg;C</sup></span>
                                 <p>{{weather.weather[0].description | capitalize}}</p>
                             </div>
 
-                            <div class="col-md-4 conditions">   
+                            <div class="col-md-4 col-sm-4 conditions">   
                                 <div class="pull-right">
                                     <p>Humidity: {{weather.main.humidity}}%</p>
                                     <p>Wind: {{weather.wind.speed}} km/h</p>

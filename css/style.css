@@ -52,8 +52,14 @@ p {
   right: 16px;
 }
 
+@media only and screen(max-width: 640px) {
+  .unit {
+    right: 69px;
+  }
+}
+
 .conditions {
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 tags-input {
